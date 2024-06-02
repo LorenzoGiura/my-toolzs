@@ -1,0 +1,18 @@
+<div class="gallery-container">
+    <div class="gallery-header">
+        <div class="select-category">
+            <label class="select-label" for="category">Filter image by category</label>
+            <select class="select-values" name="category" id="category" (change)="onChangeCategory($event)">
+                <option value="" disabled selected hidden>Select your option...</option>
+                @for(category of categorys; track category) {
+                    <option value="{{category.value}}">{{category.label}}</option>
+                }
+            </select>
+        </div>
+        <div class="favorites">
+            <a routerLink="favorites" routerLinkActive="active">Favorites</a>
+        </div>  
+    </div>
+    <router-outlet />
+</div>
+

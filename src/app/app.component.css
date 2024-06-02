@@ -1,0 +1,7 @@
+.main {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}

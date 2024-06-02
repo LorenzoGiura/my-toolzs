@@ -1,0 +1,54 @@
+.gallery-header {
+    margin-top: 1rem;
+    display: flex;
+    background-color: rgb(101, 98, 104);
+    border-radius: 15px;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.select-category {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 30%;
+    font-variant: small-caps;
+    border-right: 1px solid grey;
+}
+.select-label {
+    color: white;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.select-values {
+    height: 1.5rem;
+    border: 1px solid gray;
+}
+
+.favorites {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    font-variant: small-caps;
+}
+
+.favorites a {
+    border-radius: 15px;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-variant: small-caps;
+    margin: 10px;
+    font-weight: 600;
+}
+.favorites a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.favorites a.active {
+    background-color: #2b423a;
+    color: white;
+}
