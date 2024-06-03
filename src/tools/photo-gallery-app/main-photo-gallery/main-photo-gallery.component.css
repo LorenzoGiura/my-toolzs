@@ -52,3 +52,52 @@
     background-color: #2b423a;
     color: white;
 }
+
+.photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0rem;
+}
+.photo {
+    background-color: rgb(190, 190, 190);
+    margin: 1rem;
+    max-width: 300px;
+    max-height: 450px;
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 10px;
+    color: rgb(62, 62, 62);
+}
+.photo > h6 {
+    margin: 0;
+    padding: 0.50rem;
+}
+.photo > p {
+    max-height: 150px;
+    overflow: hidden;
+    margin: 1rem;
+}
+.photo-img {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.photo-img > img {
+    border: 1px solid white;
+    border-radius: 10px;
+    max-width: 300px;
+    max-height: 150px;
+}
+.photo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+.photo-header > h1 {
+    margin: 0;
+}
+.photo-header > mat-icon {
+    padding-right: 0.5rem;
+}
+

@@ -9,10 +9,15 @@ import { FavoritesComponent } from '../tools/photo-gallery-app/favorites/favorit
 
 export const routes: Routes = [
     { path: '', title: "Home Page",  component: HomePageComponent },
-    { path: 'gallery', title: "TOOLS | Gallery",  component: MainPhotoGalleryComponent },
+    {   path: 'gallery', 
+        title: "TOOLS | Gallery",  
+        component: MainPhotoGalleryComponent,
+        children: [
+            { path: 'favorites', title: "TOOLS | Gallery Favorites",  component: FavoritesComponent },
+        ]
+    },
     { path: 'todo', title: "TOOLS | Todo",  component: MainTodoComponent },
     { path: 'contacts', title: "TOOLS | Contacts",  component: MainContactsComponent },
     { path: 'films', title: "TOOLS | Films",  component: MainFilmsComponent },
     { path: 'weather', title: "TOOLS | Weather",  component: MainWeatherComponent },
-    { path: 'gallery/favorites', title: "TOOLS | Gallery Favorites",  component: FavoritesComponent },
 ];

@@ -10,9 +10,32 @@
             </select>
         </div>
         <div class="favorites">
-            <a routerLink="favorites" routerLinkActive="active">Favorites</a>
+            @if(isFavorites) {
+                <a (click)="onClickFavorites()">Favorites</a>
+            } @else {
+                <a (click)="onClickHomeGallery()">back to Gallery</a>
+            }
         </div>  
     </div>
-    <router-outlet />
+    
+    @if(isFavorites) {
+        <div class="photos-container">
+            @for(photo of photos; track photo.id) {
+                <div class="photo">
+                    <div class="photo-header">
+                        <h1>{{photo.title}}</h1>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+                    </div>
+                    <h6><u>{{photo.category}}</u></h6>
+                    <div class="photo-img">
+                        <img src="../../../assets/gallery-images/{{photo.file_name}}"/>
+                    </div>
+                    <p>{{photo.description}}</p>
+                </div>
+            }
+        </div>>
+    } @else {
+        <router-outlet />
+    }
 </div>
 
