@@ -11,7 +11,7 @@
         </div>
         <div class="favorites">
             @if(isFavorites) {
-                <a (click)="onClickFavorites()">Favorites</a>
+                <a (click)="onClickFavoritesPage()">Favorites</a>
             } @else {
                 <a (click)="onClickHomeGallery()">back to Gallery</a>
             }
@@ -24,7 +24,10 @@
                 <div class="photo">
                     <div class="photo-header">
                         <h1>{{photo.title}}</h1>
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+                        <mat-icon [ngClass]="photo.like ? 'favorite-icon-like' : 'favorite-icon'" 
+                            aria-hidden="false" aria-label="Favorite icon" fontIcon="favorite"
+                            (click)="onClickFavorites(photo.id)">
+                        </mat-icon>
                     </div>
                     <h6><u>{{photo.category}}</u></h6>
                     <div class="photo-img">
@@ -33,7 +36,7 @@
                     <p>{{photo.description}}</p>
                 </div>
             }
-        </div>>
+        </div>
     } @else {
         <router-outlet />
     }

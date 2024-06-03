@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule, Router  } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
 import { PhotoComponent } from "../photo/photo.component";
@@ -10,7 +11,7 @@ import { PhotoService } from '../photo/photo.service';
     standalone: true,
     templateUrl: './main-photo-gallery.component.html',
     styleUrl: './main-photo-gallery.component.css',
-    imports: [RouterOutlet, RouterModule , PhotoComponent, MatIconModule]
+    imports: [RouterOutlet, RouterModule , PhotoComponent, MatIconModule, CommonModule]
 })
 export class MainPhotoGalleryComponent {
   constructor(
@@ -23,10 +24,10 @@ export class MainPhotoGalleryComponent {
   photos = this.photoService.getPhotos();
   
   onChangeCategory(event: any) {
-  console.log(event?.target.value);
+    console.log(event?.target.value);
   }
 
-  onClickFavorites() {
+  onClickFavoritesPage() {
     this.isFavorites = false;
     this.router.navigate(['gallery/favorites']);
   }
@@ -34,5 +35,9 @@ export class MainPhotoGalleryComponent {
   onClickHomeGallery() {
     this.isFavorites = true;
     this.router.navigate(["gallery"]);
+  }
+
+  onClickFavorites(photoId: number) {
+    this.photoService.setFavoriteById(photoId);
   }
 }

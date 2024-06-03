@@ -101,3 +101,12 @@
     padding-right: 0.5rem;
 }
 
+.favorite-icon {
+    color: whitesmoke;
+}
+
+.favorite-icon-like {
+    color: rgb(255, 123, 152);
+}
+
+

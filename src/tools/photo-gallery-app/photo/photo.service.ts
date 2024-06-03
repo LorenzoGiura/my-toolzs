@@ -10,7 +10,7 @@ export class PhotoService {
             title: 'Towers',
             category: 'Building',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            like: false
+            like: true
         },
         {
             id: 2,
@@ -139,5 +139,12 @@ export class PhotoService {
 
     getCategorys() {
         return this.photoCategorys;
+    }
+
+    setFavoriteById(photoId: number) {
+        let photo = this.photos.find(photo => photo.id == photoId);
+        if(photo) {
+            photo.like = photo?.like ? false : true;
+        }
     }
   }
