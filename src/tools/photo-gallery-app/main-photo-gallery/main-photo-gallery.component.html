@@ -2,12 +2,18 @@
     <div class="gallery-header">
         <div class="select-category">
             <label class="select-label" for="category">Filter image by category</label>
-            <select class="select-values" name="category" id="category" (change)="onChangeCategory($event)">
-                <option value="" disabled selected hidden>Select your option...</option>
-                @for(category of categorys; track category) {
-                    <option value="{{category.value}}">{{category.label}}</option>
+            <div class="filter-container">
+                <select [disabled]="!isFavorites" class="select-values" name="category" id="category" (change)="onChangeCategory($event)" [(ngModel)]="selectedValue">
+                    <option value="0" disabled selected hidden>Select your option...</option>
+                    @for(category of categorys; track category) {
+                        <option value="{{category.value}}">{{category.label}}</option>
+                    }
+                </select>
+                @if(isFiltered) {
+                    <i class="pi pi-times close-filter" (click)="onClickCloseFilter()"></i>
                 }
-            </select>
+            </div>
+
         </div>
         <div class="favorites">
             @if(isFavorites) {
@@ -18,27 +24,22 @@
         </div>  
     </div>
     
-    @if(isFavorites) {
-        <div class="photos-container">
+    <div class="photos-container">
+        @if(isFavorites) {
             @for(photo of photos; track photo.id) {
-                <div class="photo">
-                    <div class="photo-header">
-                        <h1>{{photo.title}}</h1>
-                        <mat-icon [ngClass]="photo.like ? 'favorite-icon-like' : 'favorite-icon'" 
-                            aria-hidden="false" aria-label="Favorite icon" fontIcon="favorite"
-                            (click)="onClickFavorites(photo.id)">
-                        </mat-icon>
-                    </div>
-                    <h6><u>{{photo.category}}</u></h6>
-                    <div class="photo-img">
-                        <img src="../../../assets/gallery-images/{{photo.file_name}}"/>
-                    </div>
-                    <p>{{photo.description}}</p>
+                <app-photo [photo]="photo"/>
+            }
+
+            @if(!thereIsPhoto) {
+                <div class="no-photos-container">
+                    <p>No images for this category!</p>
+                    <img src="../../../assets/image-not-found-icon.png"/>
                 </div>
             }
-        </div>
-    } @else {
-        <router-outlet />
-    }
+
+        } @else {
+            <router-outlet />
+        }
+    </div>
 </div>
 

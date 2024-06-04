@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { PhotoType } from "./photo.module";
+import { PhotoCategory, PhotoType } from "./photo.module";
 
 @Injectable({providedIn: 'root'})
 export class PhotoService {
@@ -8,7 +8,7 @@ export class PhotoService {
             id: 1,
             file_name: 'building_1.jpg',
             title: 'Towers',
-            category: 'Building',
+            category: 0,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: true
         },
@@ -16,7 +16,7 @@ export class PhotoService {
             id: 2,
             file_name: 'building_2.jpg',
             title: 'Skylab',
-            category: 'Building',
+            category: 0,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },        
@@ -24,7 +24,7 @@ export class PhotoService {
             id: 3,
             file_name: 'building_3.jpg',
             title: 'Glazed Building',
-            category: 'Building',
+            category: 0,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },        
@@ -32,7 +32,7 @@ export class PhotoService {
             id: 4,
             file_name: 'building_4.jpg',
             title: 'Spiral Palace',
-            category: 'Building',
+            category: 0,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },       
@@ -40,7 +40,7 @@ export class PhotoService {
             id: 5,
             file_name: 'building_5.jpg',
             title: 'Cupola',
-            category: 'Building',
+            category: 0,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },
@@ -48,7 +48,7 @@ export class PhotoService {
             id: 6,
             file_name: 'dog_1.jpg',
             title: 'Frisky',
-            category: 'Dog',
+            category: 1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },
@@ -56,7 +56,7 @@ export class PhotoService {
             id: 7,
             file_name: 'dog_2.jpg',
             title: 'Pitty',
-            category: 'Dog',
+            category: 1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },        
@@ -64,7 +64,7 @@ export class PhotoService {
             id: 8,
             file_name: 'dog_3.jpg',
             title: 'Arnold',
-            category: 'Dog',
+            category: 1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },        
@@ -72,7 +72,7 @@ export class PhotoService {
             id: 9,
             file_name: 'dog_4.jpg',
             title: 'Axel',
-            category: 'Dog',
+            category: 1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },       
@@ -80,7 +80,7 @@ export class PhotoService {
             id: 10,
             file_name: 'dog_5.jpg',
             title: 'Fuffo',
-            category: 'Dog',
+            category: 1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },
@@ -88,7 +88,7 @@ export class PhotoService {
             id: 11,
             file_name: 'flowers_1.jpg',
             title: 'Field of Flowers',
-            category: 'Flowers',
+            category: 2,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },
@@ -96,7 +96,7 @@ export class PhotoService {
             id: 12,
             file_name: 'flowers_2.jpg',
             title: 'Blue flower',
-            category: 'Flowers',
+            category: 2,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },        
@@ -104,7 +104,7 @@ export class PhotoService {
             id: 13,
             file_name: 'flowers_3.jpg',
             title: 'Mountain flowers',
-            category: 'Flowers',
+            category: 2,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },        
@@ -112,7 +112,7 @@ export class PhotoService {
             id: 14,
             file_name: 'flowers_4.jpg',
             title: 'Bird on flower',
-            category: 'Flowers',
+            category: 2,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         },       
@@ -120,13 +120,13 @@ export class PhotoService {
             id: 15,
             file_name: 'flowers_5.jpg',
             title: 'Pink petals',
-            category: 'Flowers',
+            category: 2,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             like: false
         }
     ];
 
-    private photoCategorys = [
+    private photoCategorys: PhotoCategory[] = [
         {value: 0, label: 'Building'},
         {value: 1, label: 'Dog'},
         {value: 2, label: 'Flowers'},
@@ -139,6 +139,14 @@ export class PhotoService {
 
     getCategorys() {
         return this.photoCategorys;
+    }
+
+    getPhotosByCategory(category: number) {
+        return this.photos.filter(el => el.category == category);
+    }
+
+    getFavoritePhotos() {
+        return this.photos.filter(el => el.like);
     }
 
     setFavoriteById(photoId: number) {

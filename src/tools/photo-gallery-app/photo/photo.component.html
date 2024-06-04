@@ -1,1 +1,14 @@
-<p>photo works!</p>
+<div class="photo">
+    <div class="photo-header">
+        <h1>{{photo().title}}</h1>
+        <mat-icon [ngClass]="photo().like ? 'favorite-icon-like' : 'favorite-icon'" 
+            aria-hidden="false" aria-label="Favorite icon" fontIcon="favorite"
+            (click)="onClickFavorites(photo().id)">
+        </mat-icon>
+    </div>
+    <h6><u>{{getCategoryLabel(photo().category)}}</u></h6>
+    <div class="photo-img">
+        <img src="../../../assets/gallery-images/{{photo().file_name}}"/>
+    </div>
+    <p>{{photo().description}}</p>
+</div>

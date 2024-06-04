@@ -1,2 +1,12 @@
-<ng-content></ng-content>
-<p>favorites works!</p>
+<div class="photos-container">
+    @for(photo of photos; track photo.id) {
+        <app-photo [photo]="photo"/>
+    }
+
+    @if(!thereIsPhoto) {
+        <div class="no-photos-container">
+            <p>Go back to the gallery and add some images to your favorites!</p>
+            <img src="../../../assets/image-not-found-icon.png"/>
+        </div>
+    }
+</div>

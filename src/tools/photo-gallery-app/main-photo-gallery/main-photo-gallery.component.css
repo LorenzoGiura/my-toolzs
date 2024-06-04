@@ -21,8 +21,24 @@
     font-style: italic;
 }
 .select-values {
+    width: 100%;
     height: 1.5rem;
     border: 1px solid gray;
+}
+
+.filter-container {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-container > i {
+    margin-left: 0.75rem;
+}
+
+.close-filter {
+    font-size: 1.5rem;
+    color: rgb(37, 37, 37);
 }
 
 .favorites {
@@ -53,64 +69,9 @@
     color: white;
 }
 
-.photos-container {
+::ng-deep .photos-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1rem 0rem;
 }
-.photo {
-    background-color: rgb(168, 168, 168);
-    margin: 1rem;
-    max-width: 300px;
-    max-height: 450px;
-    border: 1px solid rgb(166, 166, 166);
-    border-radius: 10px;
-    color: rgb(62, 62, 62);
-    box-shadow: 6px 6px 20px;
-}
-.photo:hover {
-    background-color: rgb(190, 190, 190);
-}
-.photo > h6 {
-    margin: 0;
-    padding: 0.50rem;
-}
-.photo > p {
-    max-height: 150px;
-    overflow: hidden;
-    margin: 1rem;
-}
-.photo-img {
-    margin: 1rem;
-    display: flex;
-    justify-content: center;
-}
-.photo-img > img {
-    border: 1px solid white;
-    border-radius: 10px;
-    max-width: 300px;
-    max-height: 150px;
-}
-.photo-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem;
-}
-.photo-header > h1 {
-    margin: 0;
-}
-.photo-header > mat-icon {
-    padding-right: 0.5rem;
-}
-
-.favorite-icon {
-    color: whitesmoke;
-}
-
-.favorite-icon-like {
-    color: rgb(255, 123, 152);
-}
-
-
