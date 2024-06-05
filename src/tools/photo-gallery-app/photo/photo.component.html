@@ -1,4 +1,4 @@
-<div class="photo">
+<div class="photo" (click)="onClickPhotoCard()">
     <div class="photo-header">
         <h1>{{photo().title}}</h1>
         <mat-icon [ngClass]="photo().like ? 'favorite-icon-like' : 'favorite-icon'" 

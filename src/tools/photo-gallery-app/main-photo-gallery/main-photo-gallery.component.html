@@ -3,7 +3,7 @@
         <div class="select-category">
             <label class="select-label" for="category">Filter image by category</label>
             <div class="filter-container">
-                <select [disabled]="!isFavorites" class="select-values" name="category" id="category" (change)="onChangeCategory($event)" [(ngModel)]="selectedValue">
+                <select [disabled]="!isGalleryHome" class="select-values" name="category" id="category" (change)="onChangeCategory($event)" [(ngModel)]="selectedValue">
                     <option value="0" disabled selected hidden>Select your option...</option>
                     @for(category of categorys; track category) {
                         <option value="{{category.value}}">{{category.label}}</option>
@@ -16,7 +16,7 @@
 
         </div>
         <div class="favorites">
-            @if(isFavorites) {
+            @if(isGalleryHome) {
                 <a (click)="onClickFavoritesPage()">Favorites</a>
             } @else {
                 <a (click)="onClickHomeGallery()">back to Gallery</a>
@@ -25,9 +25,9 @@
     </div>
     
     <div class="photos-container">
-        @if(isFavorites) {
+        @if(isGalleryHome) {
             @for(photo of photos; track photo.id) {
-                <app-photo [photo]="photo"/>
+                <app-photo (photoDetailsEvent)="onPhotoDetails($event)" [photo]="photo"/>
             }
 
             @if(!thereIsPhoto) {
@@ -37,9 +37,9 @@
                 </div>
             }
 
-        } @else {
-            <router-outlet />
-        }
+        } 
+
+        <router-outlet />
     </div>
 </div>
 

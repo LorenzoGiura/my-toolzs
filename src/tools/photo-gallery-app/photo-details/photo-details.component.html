@@ -1,0 +1,10 @@
+@if (photo) {
+    <div class="details-header">
+        <h1>{{photo.title}}</h1>
+        <h6><u>{{getCategoryLabel(photo.category)}}</u></h6>
+    </div>
+    <div class="photo-img">
+        <img src="../../../assets/gallery-images/{{photo.file_name}}"/>
+    </div>
+    <p>{{photo.description}}</p>
+}

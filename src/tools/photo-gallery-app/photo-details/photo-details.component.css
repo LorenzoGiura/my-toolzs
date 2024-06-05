@@ -1,0 +1,27 @@
+.photo-img {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.photo-img > img {
+    border: 1px solid white;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.details-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+}
+.details-header > h1 {
+font-size: 38pt;
+}
+.details-header > h6 {
+    font-size: 16pt;
+    margin-left: 2rem;
+}

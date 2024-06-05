@@ -22,7 +22,7 @@ export class MainPhotoGalleryComponent {
   ) {}
   
   isFiltered = false;
-  isFavorites = true;
+  isGalleryHome = true;
   selectedValue = 0;
   categorys = this.photoService.getCategorys();
   photos = this.photoService.getPhotos();
@@ -47,16 +47,21 @@ export class MainPhotoGalleryComponent {
 
   }
 
+  onPhotoDetails(photoId: number) {
+    this.isGalleryHome = false;
+    this.router.navigate(['/gallery', photoId]);
+  }
+
   onClickFavoritesPage() {
     this.photos = this.photoService.getPhotos();
-    this.isFavorites = false;
+    this.isGalleryHome = false;
     this.isFiltered = false;
     this.selectedValue = 0;
     this.router.navigate(['gallery/favorites']);
   }
 
   onClickHomeGallery() {
-    this.isFavorites = true;
+    this.isGalleryHome = true;
     this.router.navigate(["gallery"]);
   }
 

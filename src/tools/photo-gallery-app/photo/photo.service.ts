@@ -141,6 +141,10 @@ export class PhotoService {
         return this.photoCategorys;
     }
 
+    getPhotosById(id: number) {
+        return this.photos.find(el => el.id == id);
+    }
+
     getPhotosByCategory(category: number) {
         return this.photos.filter(el => el.category == category);
     }
