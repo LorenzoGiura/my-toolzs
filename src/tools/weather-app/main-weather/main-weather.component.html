@@ -1,1 +1,24 @@
-<p>main works!</p>
+<div class="weather-container">
+    <h1>Weather Conditions</h1>
+
+    <form (ngSubmit)="onGetWeather()">
+        <div class="city-input">
+            <label for="city">Type the name of an Italian city</label>
+            <input type="text" id="city" name="cityInput" [(ngModel)]="city" placeholder="Enter name here..."/>
+            <button type="submit">Go weather!</button>
+        </div>
+    </form>
+
+    <div class="weather-info-container">
+        @if(weatherInfo) {
+            <div class="weather-info-header">
+                <h1><b>{{weatherInfo.name}}</b></h1>
+                <img src="../../../assets/icons/{{weatherInfo.iconName}}.png"/>
+            </div>
+            <h4><b>Temperature</b>: {{weatherInfo.temperature}} C°</h4>
+            <h4><b>Humidity</b>: {{weatherInfo.humidity}}% | <b>Pressure</b>: {{weatherInfo.pressure}} hPa | <b>Wind</b>: {{weatherInfo.windSpeed}} m/s</h4>
+            <h4><b>Clouds</b>: {{weatherInfo.clouds}}%, {{weatherInfo.weatherDescription}}</h4>
+            
+        }
+    </div>
+</div>

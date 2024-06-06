@@ -1,0 +1,32 @@
+.weather-container > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    font-weight: bold;
+    font-size: 32pt;
+}
+.city-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.city-input > label, input, button {
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 0.5rem;
+}
+
+.weather-info-container {
+    border-top: 1px solid black;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.weather-info-headers {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
