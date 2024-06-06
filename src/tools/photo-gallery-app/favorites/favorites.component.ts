@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { PhotoComponent } from "../photo/photo.component";
 import { PhotoService } from '../photo/photo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorites',
@@ -12,7 +13,9 @@ import { PhotoService } from '../photo/photo.service';
   styleUrl: './favorites.component.css'
 })
 export class FavoritesComponent {
+
   constructor(
+    private router: Router,
     private photoService: PhotoService
   ) {}
 
@@ -20,5 +23,16 @@ export class FavoritesComponent {
 
   get thereIsPhoto() {
     return this.photos.length > 0;
+  }
+
+  onRemoveFavoriteEvent(photoId: number) {
+    let photo = this.photos.find(el => el.id == photoId);
+    const index = this.photos.indexOf(photo!);
+
+    if (index > -1) this.photos.splice(index, 1);
+  }
+
+  onPhotoDetails(photoId: number) {
+    this.router.navigate(['/gallery', photoId]);
   }
 }

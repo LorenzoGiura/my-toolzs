@@ -1,6 +1,6 @@
 <div class="photos-container">
     @for(photo of photos; track photo.id) {
-        <app-photo [photo]="photo"/>
+        <app-photo (removeFavoriteEvent)="onRemoveFavoriteEvent($event)" (photoDetailsEvent)="onPhotoDetails($event)" [photo]="photo"/>
     }
 
     @if(!thereIsPhoto) {

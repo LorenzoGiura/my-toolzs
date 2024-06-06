@@ -20,12 +20,15 @@ export class PhotoComponent {
   ) {}
 
   @Output() photoDetailsEvent = new EventEmitter<number>();
+  @Output() removeFavoriteEvent = new EventEmitter<number>();
 
   photo = input.required<PhotoType>();
   categorys = this.photoService.getCategorys();
 
   onClickFavorites(photoId: number) {
     this.photoService.setFavoriteById(photoId);
+    this.removeFavoriteEvent.emit(this.photo().id);
+
   }
 
   getCategoryLabel(categoryValue: number) {

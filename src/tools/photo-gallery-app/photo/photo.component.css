@@ -31,6 +31,10 @@
     max-width: 300px;
     max-height: 150px;
 }
+.photo-img:hover {
+    cursor: pointer;
+}
+
 .photo-header {
     display: flex;
     align-items: center;
