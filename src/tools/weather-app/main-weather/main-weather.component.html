@@ -3,9 +3,12 @@
 
     <form (ngSubmit)="onGetWeather()">
         <div class="city-input">
-            <label for="city">Type the name of an Italian city</label>
-            <input type="text" id="city" name="cityInput" [(ngModel)]="city" placeholder="Enter name here..."/>
+            <label for="city">Type the name of a city</label>
+            <input type="text" id="city" name="cityInput" [(ngModel)]="city" (input)="onChangeCity()" placeholder="Enter name here..."/>
             <button type="submit">Go weather!</button>
+            @if(errorCity) {
+                <p class="error-city">Please enter a valid city name!</p>
+            }
         </div>
     </form>
 
